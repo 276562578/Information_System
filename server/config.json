@@ -1,0 +1,252 @@
+{
+  "itemlist": [
+    "solidot",
+    "hkw",
+    "freebuf"
+  ],
+  "itemactivelist": [
+    "freebuf"
+  ],
+  "item": {
+    "solidot": {
+      "info": {
+        "url": {
+          "type": "static",
+          "url": "http://www.solidot.org"
+        },
+        "displayName": "Solidot",
+        "name": "solidot",
+        "classification": "news"
+      },
+      "handler": {
+        "filter": {
+          "blacklist": [
+            ""
+          ],
+          "importance": [
+            "\u6cc4\u9732"
+          ],
+          "whitelist": [
+            ""
+          ]
+        },
+        "preset": {
+          "method": "GET",
+          "header": {
+            "User-Agent": "Mozilla/5.0 (Linux; Android 4.3; Nexus 7 Build/JSS15Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Safari/537.36"
+          },
+          "data": {}
+        },
+        "obtain": {
+          "type": "page",
+          "contentlist": [
+            {
+              "tag": "article",
+              "class": "",
+              "id": "",
+              "index": 0
+            }
+          ],
+          "content": [
+            {
+              "tag": "h2",
+              "class": "",
+              "id": "",
+              "index": 0
+            },
+            {
+              "tag": "a",
+              "class": "",
+              "id": "",
+              "index": 1
+            }
+          ],
+          "date": [
+            {
+              "tag": "span",
+              "class": "badge date",
+              "id": "",
+              "index": 0
+            }
+          ],
+          "url": [
+            {
+              "tag": "h2",
+              "class": "",
+              "id": "",
+              "index": 0
+            },
+            {
+              "tag": "a",
+              "class": "",
+              "id": "",
+              "index": 1
+            }
+          ],
+          "dateParse": "%Y\u5e74%m\u6708%d\u65e5 %H\u65f6%M\u5206",
+          "host": "http://www.solidot.org"
+        },
+        "storage": {
+          "db": "",
+          "table": "solidot",
+          "field": [
+            "title",
+            "url",
+            "writtenDate"
+          ]
+        }
+      }
+    },
+    "hkw": {
+      "info": {
+        "url": {
+          "type": "dynamic",
+          "url": "http://weixin.sogou.com/weixin?query=%E4%BD%95%E5%87%AF%E6%96%87%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD",
+          "contentlist": [
+            {
+              "tag": "p",
+              "class": "tit",
+              "id": "",
+              "index": 0
+            }
+          ],
+          "content": [
+            {
+              "tag": "a",
+              "class": "",
+              "id": "",
+              "index": 0
+            }
+          ],
+          "indexOfContent": 0,
+          "host": ""
+        },
+        "displayName": "Hkw",
+        "name": "hkw",
+        "classification": "news"
+      },
+      "handler": {
+        "filter": {
+          "blacklist": [
+            ""
+          ],
+          "importance": [
+            ""
+          ],
+          "whitelist": [
+            ""
+          ]
+        },
+        "preset": {
+          "method": "GET",
+          "header": {},
+          "data": {}
+        },
+        "obtain": {
+          "type": "json",
+          "pattern": "msgList = .+};",
+          "contentlist": "list",
+          "content": [
+            "app_msg_ext_info",
+            "title"
+          ],
+          "date": [
+            "comm_msg_info",
+            "datetime"
+          ],
+          "dateParse": "",
+          "url": [
+            "app_msg_ext_info",
+            "content_url"
+          ],
+          "host": "http://mp.weixin.qq.com"
+        },
+        "storage": {
+          "db": "",
+          "table": "hkw",
+          "field": [
+            "title",
+            "url",
+            "writtenDate"
+          ]
+        }
+      }
+    },
+    "freebuf": {
+      "info": {
+        "url": {
+          "type": "static",
+          "url": "http://www.freebuf.com"
+        },
+        "displayName": "FreeBuf",
+        "name": "freebuf",
+        "classification": "news"
+      },
+      "handler": {
+        "filter": {
+          "blacklist": [
+            "\u62db\u8058",
+            "\u8bda\u8058"
+          ],
+          "whitelist": [
+            ""
+          ],
+          "importance": [
+            "\u6cc4\u9732"
+          ]
+        },
+        "preset": {
+          "method": "GET",
+          "header": {},
+          "data": {}
+        },
+        "obtain": {
+          "type": "page",
+          "contentlist": [
+            {
+              "tag": "div",
+              "class": "news-info",
+              "id": "",
+              "index": 0
+            }
+          ],
+          "content": [
+            {
+              "tag": "a",
+              "class": "",
+              "id": "",
+              "index": 0
+            }
+          ],
+          "date": [
+            {
+              "tag": "span",
+              "class": "time",
+              "id": "",
+              "index": 0
+            }
+          ],
+          "url": [
+            {
+              "tag": "a",
+              "class": "",
+              "id": "",
+              "index": 0
+            }
+          ],
+          "dateParse": "%Y-%m-%d",
+          "host": ""
+        },
+        "storage": {
+          "db": "",
+          "table": "freebuf",
+          "field": [
+            "title",
+            "url",
+            "writtenDate"
+          ]
+        }
+      }
+    }
+  }
+}
